@@ -9,7 +9,7 @@ public class CMMQuizz implements QuizzMaster {
     public CMMQuizz ()
     {
     	choix = new String [4];
-    	question = "3.	La méthode  CMM (Capability Maturity Model) se divise en :";
+    	question = "3.	La mï¿½thode  CMM (Capability Maturity Model) se divise en :";
     	choix[0] = "a)	3 niveaux";
     	choix[1] = "b)	4 niveaux";
     	choix[2] = "c)	5 niveaux";

@@ -13,7 +13,7 @@ public class QuizzMasterService {
 		lesBoutons = new JRadioButton [4];
 		ecran.setSize( 450, 200 );
 		this.ecran.setTitle(quizMaster.getType());
-		// Fermeture de la fenêtre
+		// Fermeture de la fenï¿½tre
 		ecran.addWindowListener( new WindowAdapter() {
 		public void windowClosing( WindowEvent we ) {
 			QuizzMasterService.this.terminer();
@@ -27,9 +27,9 @@ public class QuizzMasterService {
 	        	 AbstractButton aButton = (AbstractButton) e.getSource();
 	        	 String message=aButton.getText();
 	        	 if(message.equals(quizMaster.getChoix(quizMaster.getReponse())))
-	        		 JOptionPane.showMessageDialog( ecran, "bonne réponse" );
+	        		 JOptionPane.showMessageDialog( ecran, "bonne rï¿½ponse" );
 	        	 else
-	        		 JOptionPane.showMessageDialog( ecran, "mauvaise réponse" );         
+	        		 JOptionPane.showMessageDialog( ecran, "mauvaise rï¿½ponse" );         
 	        	 
 	         };
 	      };

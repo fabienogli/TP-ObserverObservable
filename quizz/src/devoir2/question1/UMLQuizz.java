@@ -10,11 +10,11 @@ public class UMLQuizz implements QuizzMaster {
     {
     	type="Question sur UML";
     	choix = new String [4];
-    	question = "Parmi les diagrammes suivants, lequel a été introduit dans UML2 ?";
-    	choix[0] = "Diagramme d’activité";
+    	question = "Parmi les diagrammes suivants, lequel a Ã©tÃ© introduit dans UML2 ?";
+    	choix[0] = "Diagramme d'activitÃ©";
     	choix[1] = "Diagramme de Classes";
     	choix[2] = "Diagramme de Temps";
-    	choix[3] = "Diagramme des cas d’utilisation";
+    	choix[3] = "Diagramme des cas d'utilisation";
     	reponse = 2;
      }
 
