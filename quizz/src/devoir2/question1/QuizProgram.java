@@ -1,5 +1,8 @@
 package devoir2.question1;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+
 public class QuizProgram {
 
 	/**
@@ -7,7 +10,8 @@ public class QuizProgram {
 	 */
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		QuizzMasterService quizMasterService = new QuizzMasterService();
+        ApplicationContext context = new AnnotationConfigApplicationContext(QuizzServiceConstructor.class);
+		QuizzMasterService quizMasterService = context.getBean(QuizzMasterService.class);
 	}
 
 }

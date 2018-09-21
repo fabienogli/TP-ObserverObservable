@@ -1,14 +1,21 @@
 package devoir2.question1;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+@Component
 public class QuizzMasterService {
 	private JFrame ecran;
 	private JRadioButton [] lesBoutons;
-	private QuizzMaster quizMaster = new UMLQuizz();
-	public QuizzMasterService()
+	private QuizzMaster quizMaster;
+
+	@Autowired
+	public QuizzMasterService(QuizzMaster quizzMaster)
 	{
+	    this.quizMaster = quizzMaster;
 		this.ecran = new JFrame();
 		lesBoutons = new JRadioButton [4];
 		ecran.setSize( 450, 200 );
