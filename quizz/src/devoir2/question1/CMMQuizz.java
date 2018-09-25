@@ -1,5 +1,3 @@
-package devoir2.question1;
-
 public class CMMQuizz implements QuizzMaster {
 	private String question;
     private String [] choix;

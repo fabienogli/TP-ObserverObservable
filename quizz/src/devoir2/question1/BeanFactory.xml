@@ -2,12 +2,12 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="quizzConstructor" class="devoir2.question1.QuizzMasterService" lazy-init="true">
+    <bean id="quizzConstructor" class="QuizzMasterService" lazy-init="true">
         <constructor-arg ref="cmmQuizz"/>   <!--Select the cmmQuizz or umlQuizz-->
     </bean>
-    <bean id="quizzSetter" class="devoir2.question1.QuizzMasterService" lazy-init="true">
+    <bean id="quizzSetter" class="QuizzMasterService" lazy-init="true">
         <property name="quizMaster" ref="umlQuizz"/> <!--Select the cmmQuizz or umlQuizz-->
     </bean>
-    <bean id="umlQuizz" class="devoir2.question1.UMLQuizz"/>
-    <bean id="cmmQuizz" class="devoir2.question1.CMMQuizz"/>
+    <bean id="umlQuizz" class="UMLQuizz"/>
+    <bean id="cmmQuizz" class="CMMQuizz"/>
 </beans>

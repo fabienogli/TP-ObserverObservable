@@ -1,5 +1,3 @@
-package devoir2.question1;
-
 public class UMLQuizz implements QuizzMaster {
 	private String type;
 	private String question;
