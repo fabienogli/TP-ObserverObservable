@@ -13,6 +13,7 @@ public class Customer implements PropertyChangeListener {
 
     @Override
     public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
+        System.out.println(this + "voit que le taux d'intérêt a changé");
         this.tauxInteret = (double) propertyChangeEvent.getNewValue();
     }
 

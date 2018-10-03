@@ -16,6 +16,7 @@ public aspect Notifier {
 
     after(Customer customer, Bank bank) : clientAdd(customer, bank) {
         support.addPropertyChangeListener(customer);
+        System.out.println(customer + " ajouté comme observer");
     }
 
 
