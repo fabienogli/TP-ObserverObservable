@@ -10,7 +10,6 @@ public class QuizProgram {
         // TODO Auto-generated method stub
         System.setProperty("spring.profiles.active", "constructor");
 
-//        ApplicationContext quizz = new ClassPathXmlApplicationContext("devoir2/question1/QuizzBeans.xml");
         ApplicationContext context = new ClassPathXmlApplicationContext("BeanFactory.xml");
         QuizzMasterService quizzMasterService = (QuizzMasterService) context.getBean("quizzConstructor");
     }
