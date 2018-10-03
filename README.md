@@ -22,14 +22,7 @@ Nous déclarons ensuite un bean qui permettra d'injecter les dépendances  via l
     <property name="quizMaster" ref="umlQuizz"/> <!--Select the cmmQuizz or umlQuizz-->
 </bean>
 ```
-Il suffit de remplacer  
-```xml
-ref=cmmQuizz
-```
-par
-```xml
-ref=umlQuizz
-```
+Il suffit de remplacer ```ref=cmmQuizz``` par ```ref=umlQuizz```
 et inversement .
 
 Nous récupérons le contexte dans le fichier `QuizProgram.java`
@@ -38,8 +31,10 @@ ApplicationContext context = new ClassPathXmlApplicationContext("BeanFactory.xml
 ```
 Nous récupérons ensuite le bean voulu. Pour changer la méthode d'injection, remplacer quizzConstrucor par quizzSetter.
 ```java
-QuizzMasterService quizzMasterService = (QuizzMasterService) context.getBean("quizzConstructor");
+QuizzMasterService quizzMasterService =
+    (QuizzMasterService) context.getBean("quizzConstructor");
 ```
+<div style="page-break-after: always;"></div>
 
 ## Question 2
 `Notifier.aj`
@@ -52,19 +47,19 @@ Nous ajoutons un pointcut lorsque la banque ajoute un nouveau client.
 Après l'ajout, on ajoute le client en tant qu'observer.
 ```java
 pointcut clientAdd(Customer customer, Bank bank) :  
-  call(void Bank.addCustomer(Customer)) && args(customer) && target(bank);  
+    call(void Bank.addCustomer(Customer)) && args(customer) && target(bank);  
 
 
 after(Customer customer, Bank bank) : clientAdd(customer, bank) {  
-  support.addPropertyChangeListener(customer);  
+    support.addPropertyChangeListener(customer);  
 }
 ```
 Voici notre pointcut pour notifier les clients que les intérêts changent. Dès que la valeur changera, les observers seront notifiés.
 ```java
-  pointcut interetsChangent(double value, Bank bank) :  
+pointcut interetsChangent(double value, Bank bank) :  
     call(void Bank.setTauxInteret(double)) && args(value) && target(bank);
-  before(double value, Bank bank) : interetsChangent(value, bank) {  
-  support.firePropertyChange("tauxInteret", bank.getTauxInteret(), value);  
+before(double value, Bank bank) : interetsChangent(value, bank) {  
+    support.firePropertyChange("tauxInteret", bank.getTauxInteret(), value);  
 }
 ```
 
@@ -75,6 +70,7 @@ public void propertyChange(PropertyChangeEvent propertyChangeEvent) {
   this.tauxInteret = (double) propertyChangeEvent.getNewValue();  
 }
 ```
+<div style="page-break-after: always;"></div>
 
 ## Question 3  
 Tout d’abord, un code doit être maintenable. Avec l’apparition des différents pattern comme le pattern MVC, les entreprises ont compris comment séparer les différents éléments afin de  pouvoir répartir les différentes responsabilités de manière claire.  
